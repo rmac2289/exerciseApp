@@ -13,28 +13,26 @@ function formatQueryParams(params) {
 
 function displayIngredient(responseJson){
     console.log(responseJson);
-    $('#ingredientButton').hide();
-    $('#ingredient').hide();
-    $('.ingredientForm').append(`
-    <input class="backToSearch" type="button" value="search again">`);
-    $('.backToSearch').click(function(){
-        $('.backToSearch').hide();
-        $('#ingredientButton').show();
-        $('#ingredient').show();
-        $('.subList').hide();
-        $('.mainForm').removeClass('formWidth');
-    })
+    
     if (responseJson.status !== "failure"){
-    $('.mainForm').addClass('formWidth');
-    $('.subList').append(`<h3>${responseJson.ingredient}</h3>`);
+    $('.mainForm').toggleClass('formWidth');
+    $('.subList').empty();
+    $('.subList').append(`<h3>${responseJson.ingredient}</h3>`)
+    $('.listContainer').append(`
+    <input type="button" id="clear" value="clear results">`)
     for (i=0; i < responseJson.substitutes.length; i++){
     $('.subList').append(`
         <li class="subListItem">${responseJson.substitutes[i]}</li>
     `)
-    } 
+    };
+    $('#clear').click(function() {
+        $('.listContainer').empty();
+        $('.mainForm').toggleClass('formWidth');
+        
+    })
 
     }else {
-        $('.subList').append(`<h3 class="notFound">Sorry, couldn't find any substitutes for that ingredient!</h3>`)
+        $('.subList').append(`<h3 class="notFound formWidth">Sorry, couldn't find any substitutes for that ingredient!</h3>`)
     }
 }
 /* MEAL PLAN DISPLAY */ 
@@ -56,7 +54,7 @@ function displayMealPlan(responseJson) {
             `);
         }}
 
-/* MEAL & TRIVIA FETCH */ 
+/* MEAL FETCH */ 
 
 
 function getMeals(diet,calories,exclude){
@@ -124,7 +122,7 @@ function getMeals(diet,calories,exclude){
             })
         }
 
-    /* ingredient API */
+    /* ingredient API fetch */
 
         function getIngredient(ingredient) {
             const params = {

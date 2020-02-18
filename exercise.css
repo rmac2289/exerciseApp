@@ -15,7 +15,7 @@ header > h1 {
     font-size: 80px;
     padding-left:5%;
     padding-top: 8%;
-    margin-top: 75px;
+    margin-top: 100px;
     margin-bottom: 0;
     font-weight: bolder;
     letter-spacing: .1em;
@@ -63,12 +63,19 @@ body {
     display: flex;
     flex-direction: column;
 }
-form {
-    display: flex;
+#ingredientButton {
+    height: 30px;
+    width: 150px; 
+    align-self: center;
+    cursor: pointer;
+    font-size: 16px;
 }
 .formWidth {
-    width: 70%;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
+
 main {
     display: flex;
     justify-content: center;
@@ -105,9 +112,19 @@ select {
     margin-right: 2%;
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 #ingredient {
     height: 40px;
+    font-size: 16px;
+
+}
+.listContainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 input {
     width: 250px;
@@ -119,7 +136,7 @@ input {
     opacity: .7;
     color: black;
 }
-.button {
+.mainButton {
     width: 95%;
     min-height: 125px;
     font-size: 2em;
@@ -133,7 +150,7 @@ input {
     border: 3px solid olivedrab;
     opacity: .8;
 }
-.button:hover {
+.mainButton:hover {
     cursor: pointer;
     background-image: url('./5d0a88512500004e12e94a01.jpeg');
     background-size: cover;
@@ -152,10 +169,13 @@ footer {
    
    align-self: flex-end;
     width: 50%;
-    background: lightgrey;
+    min-height: 50px;
 }
 .hidden {
    display: none;
+}
+#clear {
+    cursor: pointer;
 }
 .formSection {
     background: none;
