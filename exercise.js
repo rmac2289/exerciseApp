@@ -1,5 +1,3 @@
-
-
 const apiKey = 'e665e607a65e442b806a7f9495411f15'
 const baseURL = 'https://api.spoonacular.com/'
 
@@ -11,17 +9,39 @@ function formatQueryParams(params) {
     return queryItems.join('&');
   }
 
-  /* TRIVIA DISPLAY */ 
+  /* INGREDIENT DISPLAY */ 
 
-function displayTrivia(responseJson1){
-    console.log(responseJson1);
-    $('.didYouKnow').append(`<p>${responseJson1.text}</p>`)
+function displayIngredient(responseJson){
+    console.log(responseJson);
+    $('#ingredientButton').hide();
+    $('#ingredient').hide();
+    $('.ingredientForm').append(`
+    <input class="backToSearch" type="button" value="search again">`);
+    $('.backToSearch').click(function(){
+        $('.backToSearch').hide();
+        $('#ingredientButton').show();
+        $('#ingredient').show();
+        $('.subList').hide();
+        $('.mainForm').removeClass('formWidth');
+    })
+    if (responseJson.status !== "failure"){
+    $('.mainForm').addClass('formWidth');
+    $('.subList').append(`<h3>${responseJson.ingredient}</h3>`);
+    for (i=0; i < responseJson.substitutes.length; i++){
+    $('.subList').append(`
+        <li class="subListItem">${responseJson.substitutes[i]}</li>
+    `)
+    } 
+
+    }else {
+        $('.subList').append(`<h3 class="notFound">Sorry, couldn't find any substitutes for that ingredient!</h3>`)
+    }
 }
 /* MEAL PLAN DISPLAY */ 
 
-function displayMealPlan(responseJson2) {
-    console.log(responseJson2.week);
-    let data = responseJson2.week;
+function displayMealPlan(responseJson) {
+    console.log(responseJson.week);
+    let data = responseJson.week;
     let days = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
     $('.mealWeek').empty();
@@ -39,7 +59,7 @@ function displayMealPlan(responseJson2) {
 /* MEAL & TRIVIA FETCH */ 
 
 
-function getAPIS(diet,calories,exclude,ingredient){
+function getMeals(diet,calories,exclude){
     function paramEditor(){
     if (diet=='' && calories=='' && exclude==''){
         return params = {
@@ -87,61 +107,71 @@ function getAPIS(diet,calories,exclude,ingredient){
         }
     }
 }
-    const params2 = {
-        ingredientName: ingredient,
-        apiKey: apiKey
-    }
     let paramEdit = paramEditor()
     let newParams = formatQueryParams(paramEdit);
-    let ingredientParams = formatQueryParams(params2)
-
-    const ingredientURL = `${baseURL}food/ingredients/substitutes?${ingredientParams}`
     const mealURL = `${baseURL}mealplanner/generate?${newParams}`
-    
-        let firstAPICall = fetch(ingredientURL);
-        let secondAPICall = fetch(mealURL);
 
-      
-        Promise.all([firstAPICall, secondAPICall])
-          .then(values => Promise.all(values.map(value => value.json())))
-          .then(finalVals => {
-            let responseJson1 = finalVals[0];
-            let responseJson2 = finalVals[1];
-            console.log(responseJson1); 
-            displayMealPlan(responseJson2);
-          });
-      
+        fetch(mealURL)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error(response.statusText);
+            })
+            .then(responseJson => displayMealPlan(responseJson))
+            .catch(err => {
+                alert(`Something went wrong: ${err.message}`)
+            })
+        }
+
+    /* ingredient API */
+
+        function getIngredient(ingredient) {
+            const params = {
+                ingredientName: ingredient,
+                apiKey: apiKey
+            }
+             ;
+            let ingredientParams = formatQueryParams(params);
+            const ingredientURL = `${baseURL}food/ingredients/substitutes?${ingredientParams}`
+          
+              fetch(ingredientURL)
+                 .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } 
+                    throw new Error(response.statusText);
+                })
+                .then(responseJson => 
+                    displayIngredient(responseJson))
+                .catch(err => {
+                    alert(`Something went wrong: ${err.message}`)
+                })
+        
         }
 
 /* ON SUBMITTING FORM FUNCTION */
 
 function ingredientForm(){
-    $('.ingredientForm').submit(event => {
+    $('#ingredientButton').click(function(){
         event.preventDefault();
         const ingredient = $('#ingredient').val();
-        getAPIS(ingredient);
+        getIngredient(ingredient);
     })
 }
 
 function watchForm() {
-    focus();
-    ingredientForm();
-    $('.mainForm').submit(event => {
+    $('.mainButton').click(function(event){
         event.preventDefault();
         const diet = $('#diet').val();
         const calories = $('#calories').val();
         const exclude = $('#exclude').val();
-       getAPIS(diet,calories,exclude);
+       getMeals(diet,calories,exclude);
        
 
     })
 }
-/* LINE ON SEARCH FORM */
-
-function focus(){
-    $("#diet").focus();
-  };
 
 
-$(watchForm);
 $(ingredientForm);
+$(watchForm);
