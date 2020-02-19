@@ -28,6 +28,8 @@ function displayIngredient(responseJson){
     };
 
     }else {
+        $('.mainForm').addClass('formWidth');
+    $('.formList').addClass('regulateWidth');
         $('.listContainer').removeClass('hidden');
         $('.subList').append(`<h3 class="notFound formWidth">Sorry, couldn't find any substitutes for that ingredient!</h3>`)
     }
