@@ -15,17 +15,17 @@ function displayIngredient(responseJson){
     console.log(responseJson);
     
     if (responseJson.status !== "failure"){
-    $('.mainForm').toggleClass('formWidth');
+    $('.mainForm').addClass('formWidth');
     $('.subList').empty();
     $('.subList').append(`<h3>${responseJson.ingredient}</h3>`)
-    $('.listContainer').append(`
-    <input type="button" id="clear" value="clear results">`)
+    
     for (i=0; i < responseJson.substitutes.length; i++){
     $('.subList').append(`
         <li class="subListItem">${responseJson.substitutes[i]}</li>
     `)
     };
     $('#clear').click(function() {
+        $('.subList').empty();
         $('.listContainer').empty();
         $('.mainForm').toggleClass('formWidth');
         
