@@ -16,6 +16,8 @@ function displayIngredient(responseJson){
     
     if (responseJson.status !== "failure"){
     $('.mainForm').addClass('formWidth');
+    $('.formList').addClass('regulateWidth');
+    $('.listContainer').removeClass('hidden');
     $('.subList').empty();
     $('.subList').append(`<h3>${responseJson.ingredient}</h3>`)
     
@@ -24,14 +26,9 @@ function displayIngredient(responseJson){
         <li class="subListItem">${responseJson.substitutes[i]}</li>
     `)
     };
-    $('#clear').click(function() {
-        $('.subList').empty();
-        $('.listContainer').empty();
-        $('.mainForm').toggleClass('formWidth');
-        
-    })
 
     }else {
+        $('.listContainer').removeClass('hidden');
         $('.subList').append(`<h3 class="notFound formWidth">Sorry, couldn't find any substitutes for that ingredient!</h3>`)
     }
 }
