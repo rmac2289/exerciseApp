@@ -1,76 +1,91 @@
-  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="exercise.css">
-    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
-    <title>meal generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="exercise.css">
+  <title>meal generator</title>
 </head>
+
 <body>
-    <header>
-        <h1 class="header1">cr<span id="eat">eat</span>e</h1>
-        <h2 class="header1">NEVER MEAL PLAN ALONE AGAIN</h2>
-    </header>
-    <main>
-      <section class="formSection">
-        <div class="underHeader">
-          <section class="intro">
-            <p><span class="mealIntro">Planning out your meals for the week is no fun - countless hours spent thinking about shopping and nutrition, often with a miscalculated end result. In comes the meal generator...</span><br><br> The meal generator will take your input and return breakfast, lunch, and dinner for 7 days. Click on the links and they'll take you straight to the recipes so you can get cooking! <br>All fields are optional - if you don't want to narrow it down, it will simply generate 7 days worth of random meals.</p>
-          </section>
-          <section class="intro2">
-            <h2>All out of an ingredient you need for a meal? See if there's a suitable substitute!</h2>
-            <form class="ingredientForm">
-              <input id ="ingredient" type="text" placeholder="butter, thyme..">
-              <button name="ingredientButton" id="ingredientButton" type="submit">find substitute</button> 
-            </form>
-            <div class="iconList">
-              <img src="./fridge.png">
-              <img src="./pot.png">
-              <img src="./veggies.png">
-              <img src="./oven.png">
-              </div>
-          </section>
-        </div>
-        <form class="mainForm">
-            <section class="listContainer hidden">
-                <ul class="subList" ></ul>
-             </section>  
-            <div class="formList">
-              <p>I'm on a <span>
-                <select name="diet" id="diet">
-                  <option value="''"></option>
-                  <option value="paleo">Paleo</option>
-                  <option value="vegetarian">Vegetarian</option>
-                  <option value="gluten free">Gluten Free</option>
-                  <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
-                  <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
-                  <option value="Ketogenic">Ketogenic</option>
-                  <option value="Vegan">Vegan</option>
-                  <option value="Pescetarian">Pescetarian</option>
-                  <option value="Primal">Primal</option>
-                  <option value="Whole 30">Whole 30</option>
-                </select></span> <span id="dietID">diet</span>.</p>
-              <p>I want to eat about <span><input id="calories" name="calories" type="number" placeholder="2000" min="0"></span> <span id="caloriesID">calories</span> per day.</p>
-              <p>I do <span id="not">not</span> want to eat any <span><input id="exclude" name="exclude" type="text" placeholder="fish, mushrooms..."></span></p>
-              <button name="mainButton" class="mainButton" type="submit">let's get cookin'</button>
-            </div>
-        </form>
-        <section class="section1">
-          <div class="mealWeek">
+  <header>
+    <h1 class="header1">cr<span id="eat">eat</span>e</h1>
+    <h2 class="header1">NEVER MEAL PLAN ALONE AGAIN</h2>
+  </header>
+  <main>
+    <section class="formSection" role="region">
+      <div class="underHeader">
+        <section class="intro">
+          <p><span class="mealIntro">Planning out your meals for the week is no fun - countless hours spent thinking
+              about shopping and nutrition, often with a miscalculated end result. In comes the meal
+              generator...</span><br><br> The meal generator will take your input and return breakfast, lunch, and
+            dinner for 7 days. Click on the links and they'll take you straight to the recipes so you can get cooking!
+            <br>All fields are optional - if you don't want to narrow it down, it will simply generate 7 days worth of
+            random meals.</p>
+        </section>
+        <section class="intro2" role="region">
+          <h2>All out of an ingredient you need for a meal? See if there's a suitable substitute!</h2>
+          <form class="ingredientForm">
+            <input id="ingredient" type="text" placeholder="butter, thyme..">
+            <button name="ingredientButton" id="ingredientButton" type="submit">find substitute</button>
+          </form>
+          <div class="iconList">
+            <img src="./fridge.png" alt="fridge icon">
+            <img src="./pot.png" alt="stove pot icon">
+            <img src="./veggies.png" alt="vegetable icon">
+            <img src="./oven.png" alt="oven icon">
           </div>
         </section>
+      </div>
+      <form class="mainForm" role="region">
+        <section class="listContainer hidden">
+          <ul class="subList"></ul>
+        </section>
+        <div class="formList">
+          <p>I'm on a <span>
+              <select name="diet" id="diet">
+                <option value="''"></option>
+                <option value="paleo">Paleo</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                <option value="Ketogenic">Ketogenic</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Pescetarian">Pescetarian</option>
+                <option value="Primal">Primal</option>
+                <option value="Whole 30">Whole 30</option>
+              </select></span> <span id="dietID">diet</span>.</p>
+          <p>I want to eat about <span><input id="calories" name="calories" type="number" placeholder="2000"
+                min="0"></span> <span id="caloriesID">calories</span> per day.</p>
+          <p>I do <span id="not">not</span> want to eat any <span><input id="exclude" name="exclude" type="text"
+                placeholder="fish, mushrooms..."></span></p>
+          <button name="mainButton" class="mainButton" type="submit">let's get cookin'</button>
+        </div>
+      </form>
+      <section class="section1" role="list">
+        <div class="mealWeek">
+        </div>
       </section>
-    </main>
-    <section class="iframeSection">
     </section>
-    <footer>
+  </main>
+  <footer class="contact" role="navigation">
+    <a href="https://github.com/rmac2289/mealGenerator" target="_blank">
+      <p>GitHub Repo</p>
+    </a>
+    <a href="https://rmac2289.github.io/portfolio/" target="_blank">
+      <p>Portfolio</p>
+    </a>
+    <a href="mailto:rmac2289@gmail.com" target="_blank">
+      <p>Contact</p>
+    </a>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="exercise.js"></script>
+</body>
 
-    </footer>
-     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="exercise.js"></script>
-  </body>
 </html>
-
