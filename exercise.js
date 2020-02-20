@@ -14,7 +14,6 @@ function formatQueryParams(params) {
 /* handles display on 'let's get cookin' button click */
 
 function displayIngredient(responseJson) {
-    console.log(responseJson);
 
     if (responseJson.status !== "failure") {
         $('.mainForm').addClass('formWidth');
@@ -40,12 +39,13 @@ function displayIngredient(responseJson) {
 /* handles display on 'lets get cookin'' button click */
 
 function displayMealPlan(responseJson) {
-    console.log(responseJson);
+
     let data = responseJson.week;
     let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
     $('.mealWeek').empty();
     $('.contact').addClass('zeroMargin');
+
     for (i = 0; i < days.length; i++) {
         $('.mealWeek').append(`
         <ul class="mealList">
@@ -139,6 +139,7 @@ function getIngredient(ingredient) {
         ;
     let ingredientParams = formatQueryParams(params);
     const ingredientURL = `${baseURL}food/ingredients/substitutes?${ingredientParams}`
+    console.log(ingredientParams);
 
     fetch(ingredientURL)
         .then(response => {
