@@ -1,5 +1,5 @@
 # Meal Generator App
-[Live App](http://rmac2289.github.io/mealgenerator)
+[Live App](https://rmac2289.github.io/mealGenerator/)
 
 ##### This app allows the user to plan out a week's worth of meals based on their desired caloric intake, special diet, and food restrictions. 
 
