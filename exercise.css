@@ -8,7 +8,7 @@ header {
     width: 100%;
     background: none;
     margin-bottom: 50px;
-    background-image: url('./2872941.jpg');
+    background-image: url('./banner.jpg');
     background-size: cover;
 }
 header > h1 {
@@ -229,7 +229,7 @@ select {
 }
 .mainButton:hover {
     cursor: pointer;
-    background: url('./0d5fa242e370f90813bf2c4d7a7da783.jpg');
+    background: url('./buttonborder.jpg');
     background-size: cover;
     color: black;
     transition: all .75s ease-in-out;
@@ -277,7 +277,7 @@ footer {
     text-decoration: none;
 }
 .mealWeek {
-    background-image: url('./brooke-lark-08bOYnH_r_E-unsplash.jpg');
+    background-image: url('./listbackground.jpg');
     background-size: cover;
     background-position: center;
 }
