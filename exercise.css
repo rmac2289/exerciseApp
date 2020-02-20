@@ -32,8 +32,13 @@ header > h2 {
     padding-left: 2%;
     width: 45%;
     margin-left: 2%;
+    margin-bottom: 50px;
     line-height: 1.5em;
     font-size: 18px;
+    border-right: 3px solid rgb(167, 11, 11);
+    border-bottom: 3px solid rgb(167, 11, 11);
+    border-bottom-right-radius: 5%;
+    box-shadow: 1px 1px 1px black;
 }
 body {
     display: flex;
@@ -47,6 +52,7 @@ body {
     color: green;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: .06em;
+    border-bottom: 3px solid green;
 
 }
 #eat {
@@ -58,13 +64,30 @@ body {
     font-size: 1.35em;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: .06em;
+    border-bottom: 3px solid rgb(167, 11, 11);
+}
+.iconList {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    max-width: 95%;
+    
+}
+.iconList img {
+    max-height: 85px;
+    max-width: 85px;
+    background: green;
 }
 #ingredient {
     width: 250px;
     height: 40px;
     font-size: 16px;
     margin-bottom: 25px;
-    margin-top: 20px;
+    border: 3px solid black;
+    padding: 1%;
+    box-shadow: 1px 1px 1px black;
 
 }
 .ingredientForm {
@@ -74,7 +97,6 @@ body {
 }
 
 #ingredientButton {
-    margin-top: 20px;
     height: 50px;
     width: 175px; 
     align-self: center;
@@ -82,11 +104,15 @@ body {
     font-size: 20px;
     background: white;
     box-shadow: 1px 1px 1px black;
+    border: 3px solid black;
 }
 #ingredientButton:hover {
-    background: olivedrab;
+    background: black;
     color: white;
     transition: .5s;
+}
+#ingredientButton:active {
+    box-shadow: 3px 3px 3px white;
 }
 .formWidth {
     display:flex;
@@ -94,7 +120,7 @@ body {
     justify-content: space-between;
 }
 .mealIntro {
-    font-size: 20px; 
+    font-size: 22px; 
     line-height: 1.5em;
     font-weight: bolder;
     padding: 1.25%;
@@ -126,7 +152,8 @@ main {
 
 select {
     opacity: .7;
-    border: 3px solid olivedrab;
+    border: 3px solid black;
+    box-shadow: .5px .5px .5px black;
 }
 .underHeader {
     display: flex;
@@ -143,7 +170,8 @@ select {
     padding: 1%;
     background: green;
     color: white;
-    border-radius: 5%;
+    box-shadow: 3px 3px 3px black;
+    border: 3px solid black;
 }
 .intro2 > h2 {
     padding-left: 2%;
@@ -170,12 +198,13 @@ select {
 .formList input {
     width: 250px;
     height: 25px;
-    border: 3px solid olivedrab;
+    border: 3px solid black;
     padding: .75%;
     margin-top: 10px;
     margin-bottom: 10px;
     opacity: .7;
     color: black;
+    box-shadow: .75px .75px .75px black;
 }
 .subList {
     list-style: none;
@@ -191,32 +220,28 @@ select {
     font-weight: bolder;
     margin: auto 2%;
     line-height: 1.5em;
-    border-top-left-radius: 1%;
-    border-top-right-radius: 1%;
     background-position: center;
-    color: black;
-    border: 3px solid olivedrab;
-    opacity: .8;
+    color: white;
+    background: green;
+    border: 3px solid black;
+    opacity: .9;
+    transition: all .75s ease-in-out;
 }
 .mainButton:hover {
     cursor: pointer;
-    background-image: url('./5d0a88512500004e12e94a01.jpeg');
+    background: url('./0d5fa242e370f90813bf2c4d7a7da783.jpg');
     background-size: cover;
-    transition: .5s;
-    color: yellow;
-    
-}
-img {
-    width: 50px;
-    height: 50px;
+    color: black;
+    transition: all .75s ease-in-out;
 }
 p{
     text-align: left;
 }
+.section1 {
+    margin-bottom: 0;
+}
 footer {
-   
-   align-self: flex-end;
-    width: 50%;
+    width: 100%;
     min-height: 50px;
 }
 .hidden {
@@ -238,6 +263,7 @@ footer {
     list-style: none;
     margin-left: 50px;
     margin-right: 50px;
+    padding-bottom: 0;
 }
 .days {
     font-weight: 900;
@@ -258,7 +284,59 @@ footer {
 .mealLink:hover {
     text-decoration: underline;
 }
+#calorieCount, #proteinCount, #fatCount, #carbCount {
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: green;
+}
+.nutrition {
+    list-style: none;
+    line-height: 1.5em;
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 1.1em;
+    padding-bottom:2%;
+    margin-left: 50px;
+    margin-right: 50px
+}
+.divider {
+    color: rgb(167, 11, 11);
+    font-size: 1.5em;
+    opacity: .5
+}
 @media only screen and (max-width: 720px){
+    #ingredient {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .listContainer {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mealList {
+        padding-left: 0;
+        margin-bottom:0;
+        padding-bottom: 0;
+    }
+    .subList {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .regulateWidth {
+        width: 90%;
+    }
+    .formWidth {
+        display: flex;
+        flex-direction: column;
+    }
     .underHeader {
         flex-direction: column;
     }
@@ -279,6 +357,12 @@ footer {
     }
     header > h2 {
         font-size: 1.2em;
+    }
+}
+@media only screen and (min-width: 720px) and (max-width: 900px){
+    .iconList img {
+        height: 70px;
+        width: 70px;
     }
 }
 
