@@ -39,27 +39,29 @@ function displayIngredient(responseJson) {
 /* handles display on 'lets get cookin'' button click */
 
 function displayMealPlan(responseJson) {
-
+    console.log(responseJson);
     let data = responseJson.week;
-    let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+    console.log(data);
+    let keys = Object.keys(data)
+    console.log(keys)
 
     $('.mealWeek').empty();
     $('.contact').addClass('zeroMargin');
-
-    for (i = 0; i < days.length; i++) {
+    Object.entries(data).map((day, index) => {
+        console.log(day);
         $('.mealWeek').append(`
         <ul class="mealList">
-            <h3 class="days">${days[i]}</h3>
-            <li><h4><span class="meal">breakfast:</span><a class="mealLink" href="${data[days[i]].meals[0].link}" target="_blank"> ${data[days[i]].meals[0].cleanTitle}</a></h4></li>
-            <li><h4><span class="meal">lunch:</span><a class="mealLink" href="${data[days[i]].meals[1].link}" target="_blank"> ${data[days[i]].meals[1].cleanTitle}</a></h4></li>
-            <li><h4><span class="meal">dinner:</span><a class="mealLink" href="${data[days[i]].meals[2].link}" target="_blank"> ${data[days[i]].meals[2].cleanTitle}</a></h4></li>
+            <h3 class="days">${day[index]}</h3>
+            <li><h4><span class="meal">breakfast:</span><a class="mealLink" href="${day[1].meals[0].link}" target="_blank"> ${day[1].meals[0].title}</a></h4></li>
+            <li><h4><span class="meal">lunch:</span><a class="mealLink" href="${day[1].meals[1].link}" target="_blank"> ${day[1].meals[1].title}</a></h4></li>
+            <li><h4><span class="meal">dinner:</span><a class="mealLink" href="${day[1].meals[2].link}" target="_blank"> ${day[1].meals[2].title}</a></h4></li>
         </ul>
         <ul class="nutrition">
-            <li><span id="calorieCount"> calories:</span> ${data[days[i]].nutrients.calories} <span class="divider">||</span> <span id="proteinCount">protein:</span> ${data[days[i]].nutrients.protein} 
-            <span class="divider">||</span> <span id="fatCount">fat:</span> ${data[days[i]].nutrients.fat} <span class="divider">||</span> <span id="carbCount">carbs:</span> ${data[days[i]].nutrients.carbohydrates}</li>
+            <li><span id="calorieCount"> calories:</span> ${day[1].nutrients.calories} <span class="divider">||</span> <span id="proteinCount">protein:</span> ${day[1].nutrients.protein} 
+            <span class="divider">||</span> <span id="fatCount">fat:</span> ${day[1].nutrients.fat} <span class="divider">||</span> <span id="carbCount">carbs:</span> ${day[1].nutrients.carbohydrates}</li>
         </ul>
                    `);
-    }
+                })   
 }
 
 /* fetches the spoonacular meal planning API */
