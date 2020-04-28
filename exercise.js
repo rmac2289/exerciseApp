@@ -14,7 +14,6 @@ function formatQueryParams(params) {
 /* handles display on 'let's get cookin' button click */
 
 function displayIngredient(responseJson) {
-    console.log(responseJson);
 
     if (responseJson.status !== "failure") {
         $('.mainForm').addClass('formWidth');
@@ -142,6 +141,7 @@ function getIngredient(ingredient) {
         ;
     let ingredientParams = formatQueryParams(params);
     const ingredientURL = `${baseURL}food/ingredients/substitutes?${ingredientParams}`
+    console.log(ingredientParams);
 
     fetch(ingredientURL)
         .then(response => {
@@ -197,7 +197,3 @@ function watchForm() {
 $(ingredientForm);
 $(watchForm);
 $(handleScroll);
-
-
-
-

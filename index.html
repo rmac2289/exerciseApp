@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue%7CMontserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="exercise.css">
   <title>meal generator</title>
 </head>
@@ -16,17 +16,20 @@
     <h2 class="header1">NEVER MEAL PLAN ALONE AGAIN</h2>
   </header>
   <main>
-    <section class="formSection" role="region">
+    <div class="formSection" role="region">
       <div class="underHeader">
         <section class="intro">
-          <p><span class="mealIntro">Planning out your meals for the week is no fun - countless hours spent thinking
-              about shopping and nutrition, often with a miscalculated end result. In comes the meal
-              generator...</span><br><br> The meal generator will take your input and return breakfast, lunch, and
+          <h3 class="mealIntro">Planning out your meals for the week is no fun - countless hours spent thinking
+            about shopping and nutrition, often with a miscalculated end result. In comes the meal
+            generator...
+          </h3>
+          <p> The meal generator will take your input and return breakfast, lunch, and
             dinner for 7 days. Click on the links and they'll take you straight to the recipes so you can get cooking!
             <br>All fields are optional - if you don't want to narrow it down, it will simply generate 7 days worth of
-            random meals.</p>
+            random meals.
+          </p>
         </section>
-        <section class="intro2" role="region">
+        <section class="intro2">
           <h2>All out of an ingredient you need for a meal? See if there's a suitable substitute!</h2>
           <form class="ingredientForm">
             <input id="ingredient" type="text" placeholder="butter, thyme..">
@@ -40,14 +43,14 @@
           </div>
         </section>
       </div>
-      <form class="mainForm" role="region">
+      <form class="mainForm">
         <section class="listContainer hidden">
           <ul class="subList"></ul>
         </section>
         <div class="formList">
           <p>I'm on a <span>
               <select name="diet" id="diet">
-                <option value="''"></option>
+                <option value="''">------</option>
                 <option value="paleo">Paleo</option>
                 <option value="vegetarian">Vegetarian</option>
                 <option value="gluten free">Gluten Free</option>
@@ -66,13 +69,13 @@
           <button name="mainButton" class="mainButton" type="submit">let's get cookin'</button>
         </div>
       </form>
-      <section class="section1" role="list">
+      <div class="section1" role="region">
         <div class="mealWeek">
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
   </main>
-  <footer class="contact" role="navigation">
+  <footer class="contact">
     <a href="https://github.com/rmac2289/mealGenerator" target="_blank">
       <p>GitHub Repo</p>
     </a>

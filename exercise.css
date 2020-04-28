@@ -3,6 +3,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
 header {
     width: 100%;
     background: none;
@@ -12,8 +24,8 @@ header {
 }
 
 header>h1 {
-    font-size: 80px;
-    padding-left: 5%;
+    font-size: 50px;
+    padding-left: 2%;
     margin-top: 75px;
     margin-bottom: 0;
     font-weight: bolder;
@@ -22,16 +34,25 @@ header>h1 {
 }
 
 header>h2 {
-    margin-left: 5%;
-    padding-left: 5%;
+    margin-left: 1%;
+    padding-left: 1%;
     font-weight: 900;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.mealIntro {
+    font-size: 22px;
+    line-height: 1.5em;
+    font-weight: bolder;
+    padding: 1.25%;
+    color: rgb(189, 8, 8);
 }
 
 .intro {
     padding-right: 2%;
     padding-left: 2%;
-    width: 45%;
+    width: 95%;
     margin-left: 2%;
     margin-bottom: 50px;
     line-height: 1.5em;
@@ -40,34 +61,6 @@ header>h2 {
     border-bottom: 3px solid rgb(167, 11, 11);
     border-bottom-right-radius: 5%;
     box-shadow: 1px 1px 1px black;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    border: none;
-    margin: 0;
-}
-
-#caloriesID, #dietID {
-    font-size: 1.35em;
-    color: green;
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: .06em;
-    border-bottom: 3px solid green;
-}
-
-#eat {
-    font-size: 1.5em;
-    color: green;
-}
-
-#not {
-    color: rgb(167, 11, 11);
-    font-size: 1.35em;
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: .06em;
-    border-bottom: 3px solid rgb(167, 11, 11);
 }
 
 .iconList {
@@ -85,20 +78,32 @@ body {
     background: green;
 }
 
-#ingredient {
-    width: 250px;
-    height: 40px;
-    font-size: 16px;
-    margin-bottom: 25px;
-    border: 3px solid black;
-    padding: 1%;
-    box-shadow: 1px 1px 1px black;
+.contact {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(241, 243, 248);
+    color: black;
+    margin-top: 35px;
+    border-top: 3px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
 }
 
-.ingredientForm {
+.intro2 {
+    margin-right: 2%;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1%;
+    background: green;
+    color: white;
+    box-shadow: 3px 3px 3px black;
+    border: 3px solid black;
 }
 
 #ingredientButton {
@@ -122,23 +127,68 @@ body {
     box-shadow: 3px 3px 3px white;
 }
 
+#ingredient {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    border: 3px solid black;
+    padding: 1%;
+    box-shadow: 1px 1px 1px black;
+}
+
+.ingredientForm {
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.intro, .intro2 {
+    width: 95%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro2>h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
 .formWidth {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-.mealIntro {
-    font-size: 22px;
-    line-height: 1.5em;
-    font-weight: bolder;
-    padding: 1.25%;
-    color: rgb(189, 8, 8);
+#caloriesID, #dietID {
+    font-size: 1.35em;
+    color: green;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .06em;
+    border-bottom: 3px solid green;
 }
 
-main {
+#eat {
+    font-size: 1.5em;
+    color: green;
+}
+
+#not {
+    color: rgb(167, 11, 11);
+    font-size: 1.35em;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: .06em;
+    border-bottom: 3px solid rgb(167, 11, 11);
+}
+
+.regulateWidth {
+    width: 90%;
+}
+
+.mainForm {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .formList {
@@ -147,72 +197,6 @@ main {
     font-size: 1.5em;
     font-weight: bolder;
     width: 80%
-}
-
-#diet, #exclude {
-    width: 220px;
-    padding-left: 1%;
-}
-
-#calories, #diet, #exclude {
-    font-size: 20px;
-    height: 50px;
-}
-
-#calories {
-    width: 100px;
-}
-
-select {
-    opacity: .7;
-    border: 3px solid black;
-    box-shadow: .5px .5px .5px black;
-}
-
-.underHeader {
-    display: flex;
-    justify-content: space-between;
-}
-
-.intro2 {
-    width: 40%;
-    margin-right: 2%;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1%;
-    background: green;
-    color: white;
-    box-shadow: 3px 3px 3px black;
-    border: 3px solid black;
-}
-
-.intro2>h2 {
-    padding-left: 2%;
-}
-
-.hidden {
-    display: none;
-}
-
-.listContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    margin-right: 2%;
-    padding-left: 0;
-}
-
-.regulateWidth {
-    width: 40%;
-    margin-left: 2%;
-}
-
-.subList>h3 {
-    font-weight: bolder;
 }
 
 .formList input {
@@ -227,11 +211,13 @@ select {
     box-shadow: .75px .75px .75px black;
 }
 
-.subList {
-    list-style: none;
-    border: 7px solid rgb(231, 231, 65);
-    padding: 2%;
-    line-height: 1.5em;
+.formSection {
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    max-height: 80%;
 }
 
 .mainButton {
@@ -257,8 +243,59 @@ select {
     transition: all .75s ease-in-out;
 }
 
-p {
-    text-align: left;
+.contact a {
+    font-size: 18.5px;
+    color: black;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+    color: grey;
+    transition: all 1s;
+}
+
+.divider {
+    color: rgb(167, 11, 11);
+    font-size: 1.5em;
+    opacity: .5
+}
+
+select {
+    opacity: .7;
+    border: 3px solid black;
+    box-shadow: .5px .5px .5px black;
+}
+
+#ingredient {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#diet, #exclude {
+    width: 220px;
+    padding-left: 1%;
+}
+
+#calories, #diet, #exclude {
+    font-size: 20px;
+    height: 50px;
+}
+
+#calories {
+    width: 100px;
+}
+
+.subList>h3 {
+    font-weight: bolder;
+}
+
+.subList {
+    list-style: none;
+    border: 7px solid rgb(231, 231, 65);
+    padding: 2%;
+    line-height: 1.5em;
 }
 
 .section1 {
@@ -267,19 +304,6 @@ p {
 
 .hidden {
     display: none;
-}
-
-#clear {
-    cursor: pointer;
-}
-
-.formSection {
-    background: none;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    max-height: 80%;
 }
 
 .mealList {
@@ -335,102 +359,110 @@ p {
     margin-bottom: 0;
 }
 
-.divider {
-    color: rgb(167, 11, 11);
-    font-size: 1.5em;
-    opacity: .5
-}
-
-.contact {
-    width: 100%;
-    height: 75px;
-    display: flex;
-    justify-content: space-evenly;
-    background: rgb(241, 243, 248);
-    color: black;
-    margin-top: 35px;
-    border-top: 3px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-}
-
 .zeroMargin {
     margin-top: 0;
 }
 
-.contact a {
-    font-size: 18.5px;
-    color: black;
-    text-decoration: none;
+.listContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.contact a:hover {
-    text-decoration: underline;
-    color: grey;
-    transition: all 1s;
+.subList {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@media only screen and (max-width: 720px) {
-    #ingredient {
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto;
+.mealList {
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+@media only screen and (min-width: 520px) {
+    .intro2>h2 {
+        font-size: 20px;
     }
+    .mealList, .nutrition {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}
+
+@media only screen and (min-width: 720px) {
     .mainForm {
+        align-items: flex-start;
+    }
+    .formList {
+        padding-left: 2%;
+    }
+    header>h1 {
+        font-size: 80px;
+        padding-left: 5%;
+        margin-top: 75px;
+        margin-bottom: 0;
+        font-weight: bolder;
+        letter-spacing: .1em;
+        padding-bottom: 0;
+    }
+    header>h2 {
+        margin-left: 5%;
+        padding-left: 5%;
+        font-weight: 900;
+        margin-bottom: 35px;
+        font-size: 1.5em;
+    }
+    .listContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 40%;
+        margin-right: 3.6%;
+        margin-left: 0;
+        margin-top: 0;
     }
-    .listContainer {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
+    .hidden {
+        display: none;
     }
-    .mealList {
-        padding-left: 0;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    .subList {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .regulateWidth {
-        width: 90%;
+    .notFound {
+        text-align: center;
     }
     .formWidth {
         display: flex;
-        flex-direction: column;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
     .underHeader {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
     }
-    .intro, .intro2 {
-        width: 95%;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
+    .intro2 {
+        width: 40%;
+    }
+    .intro {
+        width: 45%;
     }
     .intro2>h2 {
-        font-size: 20px;
-        text-align: center;
+        padding-left: 2%;
+        font-size: 30px
     }
-}
-
-@media only screen and (max-width: 520px) {
-    header>h1 {
-        font-size: 50px;
+    .regulateWidth {
+        width: 40%;
     }
-    header>h2 {
-        font-size: 1.2em;
+    p {
+        text-align: left;
     }
-}
-
-@media only screen and (min-width: 720px) and (max-width: 900px) {
     .iconList img {
         height: 70px;
         width: 70px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .iconList img {
+        max-height: 85px;
+        max-width: 85px;
     }
 }
