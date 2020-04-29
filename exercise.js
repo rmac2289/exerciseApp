@@ -3,7 +3,7 @@
 const apiKey = 'e665e607a65e442b806a7f9495411f15'
 const baseURL = 'https://api.spoonacular.com/'
 
-/* properly formats paramters in fetch request */
+/* properly formats paramters in fetch request a*/
 
 function formatQueryParams(params) {
     const queryItems = Object.keys(params)
