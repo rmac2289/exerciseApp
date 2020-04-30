@@ -19,7 +19,7 @@ header {
     width: 100%;
     background: none;
     margin-bottom: 50px;
-    background-image: url('./banner.jpg');
+    background-image: url('./images/banner.jpg');
     background-size: cover;
 }
 
@@ -237,7 +237,7 @@ header>h2 {
 
 .mainButton:hover {
     cursor: pointer;
-    background: url('./buttonborder.jpg');
+    background: url('./images/buttonborder.jpg');
     background-size: cover;
     color: black;
     transition: all .75s ease-in-out;
@@ -330,7 +330,7 @@ select {
 }
 
 .mealWeek {
-    background-image: url('./listbackground.jpg');
+    background-image: url('./images/listbackground.jpg');
     background-size: cover;
     background-position: center;
     padding-bottom: 0;
