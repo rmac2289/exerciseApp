@@ -51,7 +51,7 @@ function displayMealPlan(responseJson) {
         console.log(day);
         $('.mealWeek').append(`
         <ul class="mealList">
-            <h3 class="days">${day[index]}</h3>
+            <h3 class="days">${keys[index]}</h3>
             <li><h4><span class="meal">breakfast:</span><a class="mealLink" href="${day[1].meals[0].link}" target="_blank"> ${day[1].meals[0].title}</a></h4></li>
             <li><h4><span class="meal">lunch:</span><a class="mealLink" href="${day[1].meals[1].link}" target="_blank"> ${day[1].meals[1].title}</a></h4></li>
             <li><h4><span class="meal">dinner:</span><a class="mealLink" href="${day[1].meals[2].link}" target="_blank"> ${day[1].meals[2].title}</a></h4></li>
